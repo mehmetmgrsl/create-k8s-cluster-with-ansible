@@ -21,13 +21,13 @@ Create a dedicated SSH key pair to connect to the VMs:
     ```vagrant up```
 
 - The hostnames and IP addresses of the VMs are below:
-  - master  : 192.168.56.10
-  - node1   : 192.168.56.11
-  - node2   : 192.168.56.12
+  - master  : 192.168.56.15
+  - node1   : 192.168.56.16
+  - node2   : 192.168.56.17
 
 ### 2. Master and Worker Nodes Setups
 
-    ```cd  kubeadm-ansible```
+   ```cd  kubeadm-ansible```
 
 #### 2.1. Common setup for the nodes (master and workers)
 
@@ -43,7 +43,7 @@ Create a dedicated SSH key pair to connect to the VMs:
 
 ### 3. Check the Kubernetes cluster status
 
-3.1 ```ssh vagrant@192.168.56.10 -i $HOME/.ssh/vagrant_key```
+3.1 ```ssh vagrant@192.168.56.15 -i $HOME/.ssh/vagrant_key```
 
 3.2 ```kubectl get nodes```
 
