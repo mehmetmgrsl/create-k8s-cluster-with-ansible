@@ -31,15 +31,15 @@ Create a dedicated SSH key pair to connect to the VMs:
 
 #### 2.1. Common setup for the nodes (master and workers)
 
-```ansible-playbook -i hosts node-init.yml```
+```sudo ansible-playbook -i hosts node-init.yml```
 
 #### 2.2. Master node setup
 
-```ansible-playbook -i hosts master-node-init.yml```
+```sudo ansible-playbook -i hosts master-node-init.yml```
 
 #### 2.3. Worker node setup
 
-```ansible-playbook -i hosts worker-node-init.yml```
+```sudo ansible-playbook -i hosts worker-node-init.yml```
 
 ### 3. Check the Kubernetes cluster status
 
