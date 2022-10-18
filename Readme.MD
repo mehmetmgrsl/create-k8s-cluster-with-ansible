@@ -2,7 +2,7 @@
 
 ### 0. Provisioning nodes using Vagrant
 
-A Kubernetes cluster will consist of one master and two worker nodes. For this, we will be using Vagrant and VirtualBox to quickly provision virtual machines.
+A Kubernetes cluster will consist of one master and one worker node. For this, we will be using Vagrant and VirtualBox to quickly provision virtual machines.
 
 Create a dedicated SSH key pair to connect to the VMs:
 
@@ -12,7 +12,7 @@ Create a dedicated SSH key pair to connect to the VMs:
 
 ### 1. Creating VMs
 
-- There will be 3 VMs. One for the master node and others for the worker nodes.
+- There will be 2 VMs. One for the master node and another for the worker node.
 
 - Run the following command on the root folder of the project:
     
@@ -20,18 +20,48 @@ Create a dedicated SSH key pair to connect to the VMs:
 
     ```vagrant up```
 
+
+ If Vms are ok then the following command should return SUCCESS like below:
+
+ ```ansible -i hosts all -m ping```
+
+ <code>
+ worker1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+master | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ </code>
+   
+
 - The hostnames and IP addresses of the VMs are below:
-  - master  : 192.168.56.15
-  - node1   : 192.168.56.16
-  - node2   : 192.168.56.17
+  - master    : 192.168.56.15
+  - worker1   : 192.168.56.16
 
-### 2. Master and Worker Nodes Setups
+### 2. Master and Worker Node Setups
 
-   ```cd  kubeadm-ansible```
+```cd  kubeadm-ansible```
 
-#### 2.1. Common setup for the nodes (master and workers)
+#### 2.1. Common setup for the nodes (master and worker)
 
 ```sudo ansible-playbook -i hosts node-init.yml```
+
+Once the playbook is finished, we need to see content below:
+
+<code> 
+PLAY RECAP *******************************************************************************************************
+master                     : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+worker1                    : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+</code> 
 
 #### 2.2. Master node setup
 
@@ -48,7 +78,18 @@ Create a dedicated SSH key pair to connect to the VMs:
 3.2 ```kubectl get nodes```
 
 
+### 4. Delete VMs
+
+```cd vagrant-provision```
+
+```vagrant destroy```
+
+```rm -rf .vagrant```
+
+### 5. Uninstall K8S on your local machine
+
+
 Resources:
-1. https://imagdic.me/blog/create-kubernetes-cluster/
+1. [Create Kubernetes cluster with Ansible, Vagrant and kubeadm - Ivan Magdić](https://imagdic.me/blog/create-kubernetes-cluster/)
 2. https://kubernetes.io/blog/2019/03/15/kubernetes-setup-using-ansible-and-vagrant/
 3. https://stackoverflow.com/a/61769800
