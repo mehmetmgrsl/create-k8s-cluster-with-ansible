@@ -81,6 +81,13 @@ worker1                    : ok=14   changed=9    unreachable=0    failed=0    s
 3.2 ```kubectl get nodes```
 
 
+or on the root folder of this project run the following commands:
+
+
+```export KUBECONFIG=kubeadm-ansible/config```
+
+```kubectl get nodes```
+
 ### 4. Delete VMs
 
 ```cd vagrant-provision```
