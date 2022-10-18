@@ -59,11 +59,11 @@ Once the playbook is finished, we need to see content below:
 
 <code> 
 
-PLAY RECAP *******************************************************************************************************
+PLAY RECAP *******************************************************************************************************<br />
 
-master                     : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+master                     : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0<br />
 
-worker1                    : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+worker1                    : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0<br />
 
 </code> 
 
