@@ -33,6 +33,7 @@ Create a dedicated SSH key pair to connect to the VMs:
     "changed": false,
     "ping": "pong"
 }
+
 master | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
@@ -58,13 +59,11 @@ master | SUCCESS => {
 Once the playbook is finished, we need to see content below:
 
 <code> 
-
 PLAY RECAP ***********************************************************************************
 
 master                     : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 worker1                    : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-
 </code> 
 
 #### 2.2. Master node setup
