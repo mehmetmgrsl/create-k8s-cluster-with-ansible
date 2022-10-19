@@ -74,6 +74,10 @@ worker1                    : ok=14   changed=9    unreachable=0    failed=0    s
 
 ```sudo ansible-playbook -i hosts worker-node-init.yml```
 
+
+NOTE: Instead of the commands under 2. and 3. above, you can simply run ```sh install.sh```
+
+
 ### 3. Check the Kubernetes cluster status
 
 3.1 ```ssh vagrant@192.168.56.15 -i $HOME/.ssh/vagrant_key```
