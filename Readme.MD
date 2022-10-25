@@ -53,8 +53,6 @@ master | SUCCESS => {
 
 ### 2. Master and Worker Node Setups
 
-```cd  kubeadm-ansible```
-
 #### 2.1. Common setup for the nodes (master and worker)
 
 ```sudo ansible-playbook -i hosts node-init.yml```
