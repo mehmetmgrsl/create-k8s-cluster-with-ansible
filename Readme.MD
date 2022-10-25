@@ -23,6 +23,9 @@ Create a dedicated SSH key pair to connect to the VMs:
 
  If Vms are ok then the following command should return SUCCESS like below:
 
+
+ ```cd ../kubeadm-ansible```
+
  ```ansible -i hosts all -m ping```
 
  <code>
