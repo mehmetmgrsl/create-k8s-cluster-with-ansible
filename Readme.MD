@@ -86,10 +86,14 @@ NOTE: Instead of the commands under 1. and 2. above, you can simply run ```sh in
 3.2 ```kubectl get nodes```
 
 
-or on the root folder of this project run the following commands:
+or set the KUBECONFIG environment variable like below:
 
 
-```export KUBECONFIG=kubeadm-ansible/config```
+```export KUBECONFIG=<folder_of_this_project>/kubeadm-ansible/config``` 
+
+i.e if your project is under the ```~/try/k8s/create-k8s-cluster-with-ansible/``` then set the KUBECONFIG like below:
+
+```export KUBECONFIG=~/try/k8s/create-k8s-cluster-with-ansible/kubeadm-ansible/config``` 
 
 ```kubectl get nodes```
 
