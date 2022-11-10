@@ -76,7 +76,7 @@ worker1                    : ok=14   changed=9    unreachable=0    failed=0    s
 ```sudo ansible-playbook -i hosts worker-node-init.yml```
 
 
-NOTE: Instead of the commands under 1. and 2. above, you can simply run ```sh install.sh``` on the root folder.
+***NOTE***: Instead of the commands under 1. and 2. above, you can simply run ```sh install.sh``` on the root folder.
 
 
 ### 3. Check the Kubernetes cluster status
